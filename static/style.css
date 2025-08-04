@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    text-align: center;
+}
+h1{
+    color: blue;
+}
+nav{
+    background-color: blue;
+    padding: 20px;
+    font-size: 24px;
+    margin-top: 5px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+p a{
+    text-decoration: none;
+    color: blue;
+    padding: 20px;
+}
+main{
+    text-align: center;
+    font-size: 20px;
+}
+footer{
+    background-color: blue;
+    color: white;
+    padding: 16px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 24px;
+}
+
+table td{
+    padding: 10px;
+}
+

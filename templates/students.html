@@ -1,0 +1,52 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<center>
+    <h3>Add New Student</h3>
+  <form method="POST" action="/add_student">
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="text" name="faculty" placeholder="faculty" required><br><br>
+    <input type="text" name="semester" placeholder="semester" required><br><br>
+
+    <button type="submit">Add Student</button>
+  </form>
+   <h2>Student List</h2>
+<table border="1" cellpadding="20px" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Faculty</th>
+      <th>Semester</th>
+      <th>actions</th>  
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+    <tr>
+      <td>{{ student.name }}</td>
+      <td>{{ student.faculty }}</td>
+      <td>{{ student.semester }}</td>
+      <td>
+        <form action="{{url_for('delete_student',student_id=student.id)}}" method="POST" style="display: inline;">
+          <button type="submit" onclick="return confirm('are you sure to delete?')">delete</button>
+        </form> |
+        <button><a href="{{url_for('edit_student',student_id=student.id)}}"></a> edit</button>
+
+      </td>
+     
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<p><a href="/teachers"> go teachers</a></p>
+
+
+  
+  </center>
+
+
+
+{% endblock%}

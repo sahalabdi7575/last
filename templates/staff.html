@@ -1,0 +1,48 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+ <center>
+    <h3>Add New staff</h3>
+  <form method="POST" action="/add_staff">
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="text" name="position" placeholder="position" required><br><br>
+    <input type="text" name="salary" placeholder="salary" required><br><br>
+    
+
+    <button type="submit">Add staff</button>
+  </form>
+   <h2>staff List</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Salary</th>
+     
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for staff in staffs %}
+    <tr>
+      <td>{{ staff.id }}</td>
+      <td>{{ staff.name }}</td>
+      <td>{{ staff.position}}</td>
+      <td>{{ staff.salary}}</td>
+      
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p><a href="/"> go students</a></p>
+
+
+  
+  </center>
+
+
+
+{% endblock%}
